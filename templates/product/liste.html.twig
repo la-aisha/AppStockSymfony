@@ -1,0 +1,134 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %} Gestionnaire Product!{% endblock %}
+
+{% block body %}
+                   <!-- Form Components start -->
+                    <section id="form-components">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                   
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="row">
+                                 
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                   
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn bg-light-secondary" data-toggle="modal" data-target="#iconForm">
+                                                        Ajouter Produit
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade text-left" id="iconForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Produit</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                               {{form(form)}}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Form Components end -->
+
+ <!--Shopping cart starts-->
+                    <section id="shopping-cart" class="">
+                        <div class="row ">
+                            <div class="col-md-12"  class="d-flex justify-content-center"">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Shopping Cart</h4>
+                                    </div>
+                                        <div class="card-body table-responsive">
+                                        {% for p in prods %}
+ <div class="card card-inverse bg-dark text-center">
+                                    <div class="card-content">
+                                        <div class="card-img overlap">
+                                            <img src="../../../app-assets/img/elements/11.png" alt="element 06" width="235" class="mb-1">
+                                        </div>
+                                        <div>
+                                        <span>Identifiant : {{p.id}}</span>
+                                        <span> Libelle : {{p.libelle}}</span>
+                                        <span> Quantite :  {{p.qtStock}}</span>
+                                        <span> Utilisateur :  {{p.user}}</span>
+
+
+                                        </div>
+
+                                        <div class="card-body mt-3">
+                                            <a type="button" href="{{ path('product_edit', {'id': p.id}) }}" class="btn btn-primary bg-light-red btn-icon round mr-1 mb-1"><i class="ft-edit-2"></i> </a>
+                                            <a  href="{{ path('product_delete', {'id': p.id}) }}" class="btn btn-success bg-light-danger btn-icon round mr-1 mb-1"><i class="ft-x font-medium-3"></i></a>
+                                             <a  href="{{ path('product_delete', {'id': p.id}) }}" class="btn btn-warning bg-light-warning btn-icon round mr-1 mb-1"><i class="ft-eye font-medium-3"></i></a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                        {% endfor %}
+                                           {#  <table class="table text-center m-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Image</th>
+                                                        <th>Libellé</th>
+                                                        <th>Quantité</th>
+                                                        <th>ActionS</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   {#   {% for p in prods %}
+                                                       <tr>
+                                                        <td><img src="{{asset('accueil/app-assets/img/elements/01.png')}}" alt="product" style="height: 75px;"></td>
+                                                        <td>  {{ p.libelle}} </td>
+                                                        <td>  {{ p.qtStock}} </td>
+                                                        <td>
+                                                         <a type="button" href="{{ path('product_edit', {'id': p.id}) }}" class="btn btn-warning btn-icon round mr-1 mb-1"><i class="ft-edit-2"></i> </a>
+                                                        <a  href="{{ path('product_delete', {'id': p.id}) }}" class="btn btn-success bg-light-danger btn-icon round mr-1 mb-1"><i class="ft-x font-medium-3"></i></a>
+ 
+                                                        </td>
+                                                        </tr>
+                                                   
+                                                    {% endfor %} 
+ 
+
+                                                  
+                                                </tbody>
+                                            </table>#}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Shopping cart ends-->
+
+                  
+
+ <!--Shopping cart starts-->
+                    <section id="shopping-cart">
+                      
+                    </section>
+                    <!--Shopping cart ends-->
+
+                            
+{% endblock %}
+    
+    

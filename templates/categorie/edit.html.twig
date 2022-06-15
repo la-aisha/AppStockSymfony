@@ -1,0 +1,42 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Edit Produit{% endblock %}
+
+{% block body %}
+    <h1>Edit Produit</h1>
+     <!-- Modal -->
+                                                    <div  id="iconForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Modal Title</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                 <form name="category_form" method="post"><div id="category_form"><div class="mb-3"><label for="category_form_nomCat" class="form-label required" >Nom cat</label><input type="text" id="category_form_nomCat" name="category_form[nomCat]"  required="required" maxlength="255" class="form-control" />        </div><div class="mb-3"><button type="submit" id="category_form_save" name="category_form[save]" class="btn-primary btn">Save</button></div><input type="hidden" id="category_form__token" name="category_form[_token]" value="45e3.47reZoEx9fpjQIsZE9Qc3hSyzM9EvcPsXsUxw4wbEEg.qY6GCuVDm7kHKOV9Q6dS6ieAmJoqjYCebqdooPpwZAzOyLsBtnuUuBs22g" /></div></form>
+
+                                                               {# {{form(form)}}
+                                                               {{ form_start(form) }}
+                                                                    {{ form_errors(form) }}
+
+                                                                    {{ form_row(form.nomCat) }}
+                                                                    
+                                                                   
+                                                                {{ form_end(form) }} #} 
+
+{#                                                                   {{form_start(form,{'attr':{'class':'class="bi bi-alt'}})}} 
+ #}                                                                </div>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+ {#
+    {{ include('produit/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_produit_index') }}">back to list</a>
+
+    {{ include('produit/_delete_form.html.twig') }} #}
+{% endblock %}

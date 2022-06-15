@@ -1,0 +1,107 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+
+<!-- Form Components start -->
+                    <section id="form-components">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                   
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="row">
+                                 
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                   
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn bg-light-primary" data-toggle="modal" data-target="#iconForm">
+                                                        Ctaegorie
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade text-left" id="iconForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Catégorie</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                {{form(form)}}
+                                                                                                                             </div>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+ <!-- Form Components end -->
+
+
+ <!--Shopping cart starts-->
+                    <section id="shopping-cart">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Shopping Cart</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body table-responsive">
+                                            <table class="table text-center m-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Image</th>
+                                                        <th>Identifiant</th>
+                                                         <th>Nom Categorie</th>                                                     
+                                                        <th>ActionS</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for c in cats %}
+                                                        <tr>
+                                                        <td><img src="{{asset('accueil/app-assets/img/elements/01.png')}}" alt="product" style="height: 75px;"></td>
+                                                         <td>  {{ c.id}}  </td>
+
+                                                        <td>  {{ c.nomCat}}  </td>
+                                                                                                       
+                                                        <td>
+                                                            <a type="button" href="{{ path('category_edit', {'id': c.id}) }}" class="btn btn-warning btn-icon round mr-1 mb-1"><i class="ft-edit-2"></i> {{c.id}}</a>
+                                                            <a  href="{{ path('category_delete', {'id': c.id}) }}" class="btn btn-success bg-light-danger btn-icon round mr-1 mb-1"><i class="ft-x font-medium-3"></i></a>
+ 
+                                                        </td>
+                                                        </tr>
+                                                   
+                                                    {% endfor %}
+  
+
+                                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Shopping cart ends-->
+
+                 
+ 
+
+
+   
+{% endblock %}

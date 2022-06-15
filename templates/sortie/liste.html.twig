@@ -1,0 +1,216 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %} Sortie{% endblock %}
+
+{% block body %}
+                  <!-- Form Components start -->
+                    <section id="form-components">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                   
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <div class="row">
+                                 
+                                                <div class="col-lg-4 col-md-6 col-12">
+                                                   
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn bg-light-primary" data-toggle="modal" data-target="#iconForm">
+                                                        Launch Modal
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade text-left" id="iconForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Modal Title</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                 {{form(form)}}
+
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Form Components end -->
+
+
+ <!--Shopping cart starts-->
+                    <section id="shopping-cart">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Shopping Cart</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body table-responsive">
+                                            <table class="table text-center m-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Image</th>
+                                                        <th>Identifiant</th>
+                                                         <th>Date Entree</th>
+                                                        <th>Quantité Achetee</th>
+                                                        <th>Produit</th>
+                                                        <th>ActionS</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for s in sorties %}
+                                                      <tr>
+                                                        <td><img src="{{asset('accueil/app-assets/img/elements/01.png')}}" alt="product" style="height: 75px;"></td>
+                                                        <td> {{ s.id}} </td>
+                                                        <td> {{ s.dateS|date('d-m-y')}} </td>
+                                                        <td>{{ s.qtS }} </td>
+                                                        <td>{{ s.produit }} </td>                                                      
+                                                        <td>
+                                                            <a type="button" href="{{ path('sortie_edit', {'id': s.id}) }}" class="btn btn-warning btn-icon round mr-1 mb-1"><i class="ft-edit-2"></i></a>
+                                                            <a  href="{{ path('sortie_delete', {'id': s.id}) }}" class="btn btn-success bg-light-danger btn-icon round mr-1 mb-1"><i class="ft-x font-medium-3"></i></a>
+ 
+                                                        </td>
+                                                        </tr>
+                                                   
+                                                     {% endfor %}
+ 
+-                                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Shopping cart ends-->
+
+                    <!--Shopping cart starts-->
+                    <section id="shopping-cart">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Ajouter Produit</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body table-responsive">
+{#                                         {{ form(form) }}
+ #}                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Shopping cart ends-->
+                           <!-- Modal modif -->
+                                                    <div class="modal fade text-left" id="detailForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Modal Title</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                 <form>
+                                                                    <div class="modal-body">
+                                                                        <label>Identifiant: </label>
+                                                                        <div class="form-group position-relative has-icon-left">
+                                                                            <input type="text" placeholder="Libelle" class="form-control">
+                                                                            <div class="form-control-position">
+                                                                                <i class="ft-mail font-medium-2 text-muted"></i>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <label>Date : </label>
+                                                                        <div class="form-group position-relative has-icon-left">
+                                                                            <input type="text" placeholder="Quantité" class="form-control">
+                                                                            <div class="form-control-position">
+                                                                                <i class="ft-lock font-medium-2 text-muted"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <label>quantite: </label>
+                                                                         <div class="form-group position-relative has-icon-left">
+                                                                            <input type="text" placeholder="Quantité" class="form-control">
+                                                                            <div class="form-control-position">
+                                                                                <i class="ft-lock font-medium-2 text-muted"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                         <label>Produit: </label>
+                                                                        <div class="form-group position-relative has-icon-left">
+                                                                              <fieldset class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="input-group-prepend">
+                                                                                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                                                                    </div>
+                                                                                    <select class="form-control" id="inputGroupSelect01">
+                                                                                        <option selected>Choose...</option>
+                                                                                        <option value="1">One</option>
+                                                                                        <option value="2">Two</option>
+                                                                                        <option value="3">Three</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </fieldset>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <input type="reset" class="btn bg-light-secondary" data-dismiss="modal" value="Close">
+                                                                        <input type="submit" class="btn btn-primary" value="Login">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                  <!-- Modal  -->
+                                                    <div class="modal fade text-left" id="modifForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Modal Title</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <form>
+                                                                    <div class="modal-body">
+                                                                        <label>Email: </label>
+                                                                        <div class="form-group position-relative has-icon-left">
+                                                                            <input type="text" placeholder="Email Address" class="form-control">
+                                                                            <div class="form-control-position">
+                                                                                <i class="ft-mail font-medium-2 text-muted"></i>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <label>Password: </label>
+                                                                        <div class="form-group position-relative has-icon-left">
+                                                                            <input type="password" placeholder="Password" class="form-control">
+                                                                            <div class="form-control-position">
+                                                                                <i class="ft-lock font-medium-2 text-muted"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <input type="reset" class="btn bg-light-secondary" data-dismiss="modal" value="Close">
+                                                                        <input type="submit" class="btn btn-primary" value="Login">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+{% endblock %}

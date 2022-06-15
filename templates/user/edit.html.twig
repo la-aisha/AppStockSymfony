@@ -1,0 +1,61 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    <h1>Edit User</h1>
+
+      <!-- Form Action Form Layout starts -->
+                    <section id="action-form-layout">
+                        <div class="row match-height">
+                            <div class="col-12 align-middle">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Form Actions</h4>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <p>You can use form actions on top & bottom and can also align them inside the form.</p>
+                                           
+                                                                {{form(form)}}
+                                                              {# {{ form_start(form) }}
+                                                                    {{ form_errors(form) }}
+
+                                                                    {{ form_row(form.nomCat) }}
+                                                                    
+                                                                   
+                                                                {{ form_end(form) }} #} 
+
+{#                                                                   {{form_start(form,{'attr':{'class':'class="bi bi-alt'}})}} 
+ #}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Form Action Form Layout ends -->
+     <!-- Modal -->
+                                                    <div  id="iconForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel34" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title" id="myModalLabel34">Modal Title</h3>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"><i class="ft-x font-medium-2 text-bold-700"></i></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                </div>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+ {#
+    {{ include('produit/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_produit_index') }}">back to list</a>
+
+    {{ include('produit/_delete_form.html.twig') }} #}
+{% endblock %}
