@@ -4,7 +4,9 @@ namespace App\Form;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\Produit;
 use App\Form\FormType;
-
+/* use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
+ */
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,6 +21,8 @@ class ProductFormType extends AbstractType
             ->add('category')
             ->add('user')
             ->add('save' ,SubmitType::class )
+           
+
 
         ;
     }
